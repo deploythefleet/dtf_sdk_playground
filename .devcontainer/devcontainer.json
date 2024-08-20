@@ -1,0 +1,43 @@
+{
+    "name": "ESP-IDF v5.3",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "USER": "dev"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash",
+                        "icon": "terminal-bash"
+                    }
+                },
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+
+            // Install relevant extensions in the dev container
+            "extensions": [
+                "twxs.cmake",
+                "ms-vscode.cpptools",
+                "ms-vscode.vscode-serial-monitor",
+                "ms-vscode.hexeditor",
+                "github.copilot"
+            ]
+        }
+    },
+    "userEnvProbe": "loginInteractiveShell",
+
+    // Forward serial device to enable flash & monitor from command line
+    // NOTE: This only works on Linux
+    "runArgs": [
+        // Use this if you are connected to your ESP32 via TTL-USB
+        "--device=/dev/ttyUSB0"
+        // Use this if you are connected to your ESP32 via JTAG and wish to debug
+        // "--device=/dev/bus/usb"
+    ],
+
+    "remoteUser": "dev"
+}

@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "thread": "cpp",
+        "dtf_c_logging.h": "c",
+        "stdbool.h": "c",
+        "param.h": "c",
+        "esp_ota_ops.h": "c",
+        "esp_attr.h": "c",
+        "errno.h": "c",
+        "esp_http_client.h": "c",
+        "esp_event.h": "c"
+    },
+    "cmake.configureOnOpen": false
+}
