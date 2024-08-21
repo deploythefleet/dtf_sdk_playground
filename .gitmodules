@@ -1,0 +1,3 @@
+[submodule "components/dtf_sdk"]
+	path = components/dtf_sdk
+	url = https://github.com/deploythefleet/dtf_sdk.git

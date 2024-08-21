@@ -13,4 +13,4 @@ set(COMPONENTS main)
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 
 # Set your project name here. This will be used to name your binary
-project(esp32_production_template)
+project(dtf_sdk_playground)
