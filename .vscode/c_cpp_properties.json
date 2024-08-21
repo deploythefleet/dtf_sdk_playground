@@ -10,7 +10,14 @@
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "c11",
             "cppStandard": "c++17",
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "linux-gcc-x64",
+            "browse": {
+            "path": [
+                "/home/dev/esp/idf/components",
+                "${workspaceFolder}"
+            ],
+            "limitSymbolsToIncludedHeaders": false
+            }
         }
     ],
     "version": 4

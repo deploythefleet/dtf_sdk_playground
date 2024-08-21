@@ -1,0 +1,23 @@
+menu "Deploy The Fleet SDK Playground"
+
+    menu "WiFi"
+
+        config DTF_PLAYGROUND_SSID
+        string "SSID"
+        default "YOUR_SSID"
+        help
+            The SSID of your WiFi network
+
+        config DTF_PLAYGROUND_WIFI_PASSWORD
+        string "Password"
+        default "YOUR_PASSWORD"
+        help
+            The password to your WiFi network
+
+    endmenu
+
+    config DTF_PLAYGROUND_PRODUCT_ID
+    string "DTF Product ID"
+    help
+        The product ID for this device from Deploy the Fleet
+endmenu
