@@ -1,1 +1,6 @@
 CONFIG_IDF_TARGET="esp32"
+#
+# Custom Certificate for DTF Failover
+#
+CONFIG_MBEDTLS_CUSTOM_CERTIFICATE_BUNDLE=y
+CONFIG_MBEDTLS_CUSTOM_CERTIFICATE_BUNDLE_PATH="components/dtf_sdk/certs/dtf_root_x1.pem"
