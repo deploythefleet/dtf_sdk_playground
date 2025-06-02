@@ -4,7 +4,7 @@ ARG UID=1000
 ARG USER=root
 
 # POSIX compatible (Linux/Unix) base image
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 
 # Import global arguments
 ARG DEBIAN_FRONTEND
@@ -51,7 +51,6 @@ RUN ["dash", "-c", "\
      gnupg \
      gperf \
      libffi-dev \
-     libpython2.7 \
      libssl-dev \
      libusb-1.0-0 \
      nano \
@@ -75,12 +74,13 @@ USER ${USER}
 # Step 2. Get ESP-IDF
 # https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html#step-2-get-esp-idf
 # VERY important to lock to a specific commit on a specific version here.
-# Pinned to v5.3 https://github.com/espressif/esp-idf/releases/tag/v5.3
+# Pinned to v5.4 https://github.com/espressif/esp-idf/releases/tag/v5.4
 RUN ["dash", "-c", "\
     mkdir esp \
  && cd esp/ \
- && git clone --recursive https://github.com/espressif/esp-idf.git --branch v5.3 ./idf  \
+ && git clone -b v5.4 --recursive https://github.com/espressif/esp-idf.git ./idf \
  && cd idf \
+ && git checkout 67c1de1eebe095d554d281952fde63c16ee2dca0 --recurse-submodules \
 "]
 
 # Step 2a. Apply IDF patches (optional)
@@ -108,4 +108,5 @@ RUN ["dash", "-c", "\
 # Step 4. Set up the environment variables
 # https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/linux-macos-setup.html#step-4-set-up-the-environment-variables
 RUN echo "source /home/${USER}/esp/idf/export.sh" >> /home/${USER}/.bashrc
-ENV LC_ALL=C
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8

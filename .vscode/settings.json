@@ -9,7 +9,9 @@
         "errno.h": "c",
         "esp_http_client.h": "c",
         "esp_event.h": "c",
-        "chrono": "cpp"
+        "chrono": "cpp",
+        "dtf_ota.h": "c",
+        "esp_log.h": "c"
     },
     "cmake.configureOnOpen": false
 }
