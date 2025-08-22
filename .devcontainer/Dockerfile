@@ -62,6 +62,7 @@ RUN ["dash", "-c", "\
      udev \
      valgrind \
      wget \
+     xxd \
  && apt-get clean \
  && apt-get purge \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
@@ -78,9 +79,9 @@ USER ${USER}
 RUN ["dash", "-c", "\
     mkdir esp \
  && cd esp/ \
- && git clone -b v5.4 --recursive https://github.com/espressif/esp-idf.git ./idf \
+ && git clone -b v5.5 --recursive https://github.com/espressif/esp-idf.git ./idf \
  && cd idf \
- && git checkout 67c1de1eebe095d554d281952fde63c16ee2dca0 --recurse-submodules \
+ && git checkout 8c750b088c7cd857d079c0eeb495da199b359461 --recurse-submodules \
 "]
 
 # Step 2a. Apply IDF patches (optional)
